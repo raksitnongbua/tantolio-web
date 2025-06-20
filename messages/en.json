@@ -1,0 +1,24 @@
+{
+  "ui": {
+    "title": "tantolio",
+    "subtitle": "Portfolio - Ask about Raksit Nongbua! 🤖",
+    "placeholder": "Ask me about Raksit's background, skills, or projects...",
+    "tryAsking": "Try asking:",
+    "stopGenerating": "Stop generating",
+    "scrollToBottom": "Scroll to bottom",
+    "sendMessage": "Send message"
+  },
+  "chat": {
+    "welcome": "👋 Welcome to Raksit's interactive portfolio! I'm tantolio, a themed chat interface designed to showcase Raksit Nongbua's background, skills, and projects. 🚀\n\n⚠️ **Note:** This is a portfolio presentation, not a real AI. I can only answer questions about Raksit's professional experience and skills.\n\n🎮 Fun fact: Raksit loves playing games! Start by asking me \"Who is Raksit Nongbua?\" or choose from the suggestions below.",
+    "default": "🤖 I'm tantolio, a portfolio showcasing Raksit Nongbua's experience. I can only answer questions about his background, skills, and projects - not general topics. Try asking one of the questions below! 🚀",
+    "whoIsRaksit": "👋 He's {name}, called {nickname} for short. He's a {title} at {company} based in {location}. 🇹🇭\n\n💼 He's an experienced Software Development Team Lead at Bitkub, specializing in authentication systems and user onboarding experiences.\n\n🏗️ As an architect of dual authentication systems, he designed internal bitkub-auth serving micro frontends with Domain-Driven Design, and external OAuth 2.0 for third-party integrations.\n\n💻 He's a frontend expert with strong session management skills and maintainer of the onboarding domain. Before becoming a web developer, he was a game developer with a background in Computer Game Multimedia. 🎮\n\n🚀 Tan is also a pioneer in bringing design tokens to Bitkub projects, initiating the concept from zero and sharing knowledge across teams.",
+    "skills": "🚀 Tan has expertise in various technologies with strong focus on frontend development:\n\n**💻 Frontend Development (Primary Expertise)**\nHe's highly skilled in React, Next.js, TypeScript, Tailwind CSS, HTML5, CSS3, and Design Tokens for building modern user interfaces and frontend architectures.\n\n**⚙️ Backend & APIs**\nHis backend knowledge includes Node.js, Express.js, Golang, REST APIs, and GraphQL for supporting full-stack development.\n\n**🗄️ Database Management**\nHe works with MongoDB, MySQL, and Firebase for data storage and management solutions.\n\n**🔐 Authentication & Security**\nSpecialized in OAuth 2.0, Session Management, JWT, Bitkub-Auth, Authentication Systems, and ACL Management.\n\n**🛠️ Development Tools**\nProficient with Git, Docker, AWS, Vercel, and Figma for development workflow and deployment.\n\n**⭐ Specializations**\nExpert in Design Systems, User Onboarding, Fintech Solutions, Team Leadership, Frontend Architecture, Domain-Driven Design, Micro Frontend, and Game Development background. 🎮",
+    "contact": "📫 You can reach Tan at:\n\n📧 **Email**: {email}\n📍 **Location**: {location}\n\n💬 He's always open to discussing new opportunities and interesting projects! Whether it's about web development, game development, or just tech talks - feel free to reach out! 🚀"
+  },
+  "suggestions": {
+    "whoIsRaksit": "Who is Raksit Nongbua?",
+    "experience": "His work experience and education",
+    "skills": "His skill and tech stack knowledge",
+    "contact": "His contact"
+  }
+}
