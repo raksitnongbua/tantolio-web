@@ -1,30 +1,35 @@
-import { Avatar, AvatarFallback } from "@/components/ui/avatar";
-import { Bot, User } from "lucide-react";
 import { SkillsDisplay } from "@/components/skills-display";
 import { portfolioData } from "@/lib/portfolio-data";
 import { cn } from "@/lib/utils";
+import { AnimatedAvatar } from "./animated-avatar";
 import type { ChatMessage as ChatMessageType } from "@/types/chat";
 
 interface ChatMessageProps {
   message: ChatMessageType;
   isLastMessage: boolean;
   showSkills: boolean;
+  isTyping?: boolean;
 }
 
-export function ChatMessage({ message, isLastMessage, showSkills }: ChatMessageProps) {
+export function ChatMessage({ 
+  message, 
+  isLastMessage, 
+  showSkills, 
+  isTyping = false 
+}: ChatMessageProps) {
   return (
     <div
       className={cn(
-        "flex gap-3 items-start",
+        "flex gap-3 items-start animate-in fade-in duration-200", // Simplified animation
         message.isUser ? "justify-end" : "justify-start"
       )}
     >
       {!message.isUser && (
-        <Avatar className="h-8 w-8">
-          <AvatarFallback className="bg-primary text-primary-foreground">
-            <Bot className="h-4 w-4" />
-          </AvatarFallback>
-        </Avatar>
+        <AnimatedAvatar 
+          isBot={true}
+          isActive={isLastMessage}
+          isTyping={isTyping}
+        />
       )}
       
       <div
@@ -49,11 +54,10 @@ export function ChatMessage({ message, isLastMessage, showSkills }: ChatMessageP
       </div>
 
       {message.isUser && (
-        <Avatar className="h-8 w-8">
-          <AvatarFallback>
-            <User className="h-4 w-4" />
-          </AvatarFallback>
-        </Avatar>
+        <AnimatedAvatar 
+          isBot={false}
+          isActive={isLastMessage}
+        />
       )}
     </div>
   );

@@ -90,6 +90,8 @@ export const portfolioData = {
       period: '2024 - Present',
       description:
         'Leading development teams in building cutting-edge cryptocurrency trading platforms and fintech solutions. Expert domain maintainer for authentication systems (accounts.bitkub.com) with dual architecture: internal bitkub-auth serving micro frontends using Domain-Driven Design, and external OAuth 2.0 for third-party integrations. Frontend specialist with strong session management and ACL management systems for internal tools managing customer access. Pioneered design tokens initiative, introducing the concept from zero and establishing design system standards across multiple projects. Managing technical architecture, code reviews, and mentoring development teams.',
+      website: 'https://www.bitkub.com/',
+      logo: '/bitkub.jpg'
     },
     {
       company: 'Bitkub Online Co., Ltd.',
@@ -97,6 +99,8 @@ export const portfolioData = {
       period: '2022 - 2024',
       description:
         'Advanced to senior role focusing on frontend architecture and complex user interface development. Led frontend initiatives, mentored junior developers, and contributed to design system development. Specialized in React, TypeScript, and modern frontend technologies for cryptocurrency trading platform.',
+      website: 'https://www.bitkub.com/',
+      logo: '/bitkub.jpg'
     },
     {
       company: 'Bitkub Online Co., Ltd.',
@@ -104,6 +108,8 @@ export const portfolioData = {
       period: '2021 - 2022',
       description:
         'Started journey at Bitkub as junior frontend developer, learning and contributing to cryptocurrency trading platform development. Gained expertise in React, JavaScript, and financial technology domain while building user interfaces for trading and authentication systems.',
+      website: 'https://www.bitkub.com/',
+      logo: '/bitkub.jpg'
     },
     {
       company: 'ProGaming Co., Ltd.',
@@ -111,6 +117,8 @@ export const portfolioData = {
       period: '2016 - 2021',
       description:
         'Dual role handling both web development and game development projects based on company resource needs. For web development: Built complete user interfaces working closely with designers via Adobe XD and Figma, using Node.js, ReactJS, Material UI, Formik, Storybook, and Redux for state management. Developed backend APIs using Express.js and Firebase Cloud Functions, with database management using Firebase Firestore, MongoDB, ParseServer, GraphQL, MinIO, and AWS. For game development: Created complete game systems using Unity for iOS, Android, and PC platforms with C# and Unity Redux for data management. Developed web games initially using Unity Tiny with TypeScript and ReactJS integration, later transitioning to Cocos TypeScript for better stability, utilizing Firebase Firestore for data storage.',
+      website: 'https://www.progaming.co.th/',
+      logo: '/progaming.webp'
     },
   ],
   education: [

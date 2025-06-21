@@ -41,9 +41,10 @@ export function splitLongMessage(content: string): string[] {
 export function calculateReadingTime(message: string): number {
   // Count words in message (more accurate than character count)
   const wordCount = message.trim().split(/\s+/).length;
-  // Average reading speed: ~200-250 words per minute (3.3-4.2 words per second)
-  // Using faster speed for better UX: ~5 words per second = 200ms per word
-  return Math.max(1000, wordCount * 200); // 200ms per word, minimum 1 second
+  // Average human reading speed: ~250 words per minute (4.2 words per second)
+  // For chat UX: faster pace at ~6-8 words per second = 125-167ms per word
+  // Using 150ms per word for optimal balance of speed and readability
+  return Math.max(500, wordCount * 150); // 150ms per word, minimum 0.5 second
 }
 
 /**
@@ -51,5 +52,18 @@ export function calculateReadingTime(message: string): number {
  * @returns Delay in milliseconds
  */
 export function generateThinkingDelay(): number {
-  return Math.random() * 1000 + 800; // 800ms to 1800ms
+  // Reduced thinking time for better UX - quick response like modern chat
+  return Math.random() * 300 + 200; // 200ms to 500ms (much faster)
+}
+
+/**
+ * Calculate typing delay to simulate realistic typing speed
+ * @param message - The message being typed
+ * @returns Typing delay in milliseconds
+ */
+export function calculateTypingDelay(message: string): number {
+  // Average typing speed: 40-60 WPM for casual typing
+  // For AI simulation: faster at ~80 WPM = 1.33 words per second = 750ms per word
+  const wordCount = message.trim().split(/\s+/).length;
+  return Math.max(300, wordCount * 100); // 100ms per word for typing effect
 }

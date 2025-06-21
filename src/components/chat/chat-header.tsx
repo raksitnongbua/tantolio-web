@@ -1,7 +1,6 @@
-import { Avatar, AvatarFallback } from "@/components/ui/avatar";
-import { Bot } from "lucide-react";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { LocaleSwitcher } from "@/components/locale-switcher";
+import { AnimatedAvatar } from "./animated-avatar";
 import { useTranslations } from 'next-intl';
 
 export function ChatHeader() {
@@ -11,11 +10,11 @@ export function ChatHeader() {
     <div className="p-4 border-b">
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-3">
-          <Avatar>
-            <AvatarFallback className="bg-primary text-primary-foreground">
-              <Bot className="h-5 w-5" />
-            </AvatarFallback>
-          </Avatar>
+          <AnimatedAvatar 
+            isBot={true}
+            isActive={true}
+            className="h-10 w-10"
+          />
           <div>
             <h1 className="text-xl font-semibold">{t('ui.title')}</h1>
             <p className="text-sm text-muted-foreground">{t('ui.subtitle')}</p>

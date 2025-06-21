@@ -13,6 +13,26 @@ This is a personal portfolio website built with Next.js 15 and React 19. The pro
 - `npm run start` - Start production server
 - `npm run lint` - Run ESLint for code quality
 
+## Recent Major Updates
+
+### Smart Scrolling System (Latest)
+- **Intelligent Auto-Scroll**: Only auto-scrolls when user is within 100px of bottom
+- **Reading Preservation**: No interruption when user scrolls up to read content
+- **Scroll to Bottom Button**: Floating button appears when scrolled away from bottom
+- **Performance Optimized**: useCallback for scroll detection, proper dependency management
+
+### Content Restructure
+- **Personal Introduction**: Developer philosophy, personality, hobbies, and life goals
+- **Detailed Work Experience**: Professional history with company links and technical details
+- **Markdown Support**: Custom renderer for rich text, links, and formatting without duplication
+- **Company Assets**: Bitkub and ProGaming logos with clickable website links
+
+### Localization Enhancements
+- **Complete Translation System**: All UI elements and content in English/Thai
+- **Professional Quality**: Native-level translations with cultural considerations
+- **Locale Switcher**: Easy language switching with flag icons in header
+- **Alias System**: Comprehensive chat response matching for both languages
+
 ## Architecture
 
 ### Tech Stack
@@ -53,18 +73,18 @@ When adding new components, follow the shadcn/ui pattern and use the configured 
 - Theme provider configured in root layout with `suppressHydrationWarning`
 
 ### Portfolio Chat System
-- Interactive AI chat interface for portfolio presentation with "Tantolio AI" assistant
-- Portfolio data managed in `src/lib/portfolio-data.ts` (includes nickname "Tan")
-- Chat responses logic in `src/lib/chat-responses.ts` with third-person perspective
-- AI speaks about Raksit in third person (e.g., "He's Raksit Nongbua, called Tan")
-- Current position: Software Development Team Lead at Bitkub
-- Detailed expertise: Authentication systems, OAuth, onboarding domain, design tokens, ACL management
-- Dual authentication architecture: internal bitkub-auth (micro frontend + DDD) and external OAuth 2.0
-- Specialized skills include microservices, domain-driven design, and micro frontend architecture
-- Skills display with icons using `src/components/skills-display.tsx`
-- Skill-to-icon mapping system in `src/lib/skill-icons.tsx`
+- Interactive AI chat interface with "Tantolio AI" assistant (portfolio presentation, not real AI)
+- Portfolio data managed in `src/lib/portfolio-data.ts` with company logos and websites
+- Chat responses in `src/lib/chat-responses.ts` with comprehensive alias system
+- Personal philosophy: "Coding is as simple as writing!" for clean, readable code
+- Two content types: personal introduction and detailed work experience
+- **Personal Content**: Developer philosophy, hobbies (games, movies, music), life goals
+- **Professional Content**: Detailed work experience with clickable company links
+- **Bilingual Content**: Complete English/Thai translations with professional quality
+- **Smart Auto-Scroll**: Only scrolls when user is near bottom (100px threshold)
+- **Scroll to Bottom Button**: Appears when scrolled up, smooth return to latest messages
+- **Markdown Rendering**: Custom renderer for rich text, bold formatting, and clickable links
+- **Company Integration**: Bitkub ([bitkub.com](https://www.bitkub.com/)) and ProGaming ([progaming.co.th](https://www.progaming.co.th/))
+- **UX Improvements**: Reading preservation, no interruption during content consumption
 - Enhanced interactive star background with mouse tracking and particle effects
-- Enhanced scrolling with auto-scroll to bottom and scroll-to-bottom button
-- Fixed layout to prevent content overlapping with input areas
-- Smooth scrolling behavior and scroll position detection
-- Backward compatibility aliases for "your" vs "his" questions
+- Fixed duplicate content rendering with non-overlapping regex patterns

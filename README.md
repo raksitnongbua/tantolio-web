@@ -1,68 +1,73 @@
 # 🤖 tantolio - Interactive AI Portfolio
 
-A modern, interactive portfolio website featuring an AI-themed chat interface to showcase Raksit Nongbua's professional experience and skills. Built with cutting-edge technology and clean architecture.
+A modern, interactive portfolio website featuring an AI-themed chat interface to showcase Raksit Nongbua's professional experience and skills. The name "tantolio" combines "Tan" (nickname) + "portfolio" to create an engaging, personalized portfolio experience.
 
 ![Next.js](https://img.shields.io/badge/Next.js-15.3.4-black)
-![React](https://img.shields.io/badge/React-19.1.0-blue)
-![TypeScript](https://img.shields.io/badge/TypeScript-5.8.3-blue)
-![Tailwind CSS](https://img.shields.io/badge/Tailwind%20CSS-4.1.10-blue)
-![pnpm](https://img.shields.io/badge/pnpm-latest-orange)
+![React](https://img.shields.io/badge/React-19.0.0-blue)
+![TypeScript](https://img.shields.io/badge/TypeScript-5-blue)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind%20CSS-v4-blue)
+![shadcn/ui](https://img.shields.io/badge/shadcn%2Fui-latest-green)
 
 ## ✨ Features
 
 ### 🤖 Interactive AI Chat Experience
-- **Themed Portfolio Chat**: AI-style interface focused on professional portfolio content
-- **Natural Conversation Flow**: Message splitting and timing for realistic chat experience
-- **Smart Suggestions**: Context-aware question suggestions
-- **Typing Indicators**: Animated loading states for better UX
+- **"Tantolio AI" Assistant**: Portfolio-focused chat bot with personality
+- **Smart Auto-Scroll**: Only scrolls when user is near bottom (improved UX)
+- **Scroll to Bottom Button**: Easy navigation back to latest messages
+- **Markdown Support**: Rich text rendering with clickable links
+- **Realistic Interactions**: Typing indicators, message delays, and natural flow
+- **Smart Suggestions**: Context-aware question prompts
 
-### 🌍 Internationalization
-- **Bilingual Support**: English and Thai languages
-- **Professional Localization**: Using next-intl for seamless language switching
-- **Persistent Preferences**: Server-side locale management with cookies
+### 🌍 Comprehensive Internationalization
+- **Bilingual Support**: Complete English and Thai translations
+- **Locale Switcher**: Easy language switching with flag icons
+- **Server-side Management**: Persistent preferences with cookies
+- **Professional Localization**: Industry-standard i18n implementation
 
-### 🎨 Modern UI/UX
-- **Dark/Light Theme**: System-aware theme switching with next-themes
-- **Responsive Design**: Mobile-first approach with Tailwind CSS
-- **Smooth Animations**: Star background, typing indicators, and scroll behaviors
-- **Accessibility**: Screen reader support and keyboard navigation
+### 🎨 Modern UI/UX Excellence
+- **Dual Theme System**: Dark/light mode with smooth transitions
+- **Interactive Backgrounds**: Mouse-tracking star particles
+- **Responsive Design**: Mobile-first approach optimized for all devices
+- **Accessibility First**: Screen reader support and keyboard navigation
+- **Smooth Animations**: Enhanced scrolling and interaction feedback
 
-### 🏗️ Technical Excellence
-- **Custom Hooks Architecture**: 5 specialized hooks for separation of concerns
-- **Component Composition**: Modular, reusable components
-- **Type Safety**: 100% TypeScript coverage with strict typing
-- **Performance Optimized**: Efficient state management and rendering
+### 🏗️ Technical Architecture
+- **Modern Stack**: Next.js 15 + React 19 + TypeScript 5
+- **Component-Driven**: shadcn/ui with custom components
+- **Performance Optimized**: Server Components and smart state management
+- **Type Safety**: 100% TypeScript coverage with strict mode
+- **Clean Code**: Follows "coding is as simple as writing" philosophy
 
 ## 🚀 Quick Start
 
 ### Prerequisites
-- Node.js 18+ 
+- Node.js 18+ (LTS recommended)
 - pnpm (recommended) or npm
 
 ### Installation
 
 ```bash
 # Clone the repository
-git clone https://github.com/raksitnongbua/tantolio-web.git
-cd tantolio-web
+git clone https://github.com/yourusername/tantolio-v2.git
+cd tantolio-v2
 
 # Install dependencies
 pnpm install
 
-# Run development server
+# Run development server with Turbopack
 pnpm dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) to view the portfolio.
 
-### Build for Production
+### Development Scripts
 
 ```bash
-# Build the application
-pnpm build
-
-# Start production server
-pnpm start
+# Development
+pnpm dev          # Start dev server with Turbopack
+pnpm build        # Build for production
+pnpm start        # Start production server
+pnpm lint         # Run ESLint checks
 ```
 
 ## 🏛️ Architecture
@@ -72,164 +77,232 @@ pnpm start
 ```
 src/
 ├── app/                    # Next.js 15 App Router
-├── components/
-│   ├── chat/              # Chat-specific components
-│   └── ui/                # Reusable UI components
-├── hooks/                 # Custom React hooks
-├── lib/                   # Core business logic
-├── types/                 # TypeScript interfaces
-├── utils/                 # Utility functions
-├── i18n/                  # Internationalization setup
-└── messages/              # Translation files
+│   ├── layout.tsx         # Root layout with providers
+│   ├── page.tsx           # Home page (chat interface)
+│   ├── not-found.tsx      # Custom 404 page
+│   └── globals.css        # Global styles
+├── components/            # React components
+│   ├── chat/             # Chat-specific components
+│   │   ├── animated-avatar.tsx
+│   │   ├── chat-header.tsx
+│   │   ├── chat-message.tsx
+│   │   ├── typing-effect.tsx
+│   │   └── typing-indicator.tsx
+│   ├── ui/               # shadcn/ui components
+│   ├── portfolio-chat.tsx # Main chat interface
+│   ├── markdown-renderer.tsx # Custom markdown support
+│   ├── locale-switcher.tsx
+│   └── theme-toggle.tsx
+├── i18n/                 # Internationalization config
+│   ├── config.ts
+│   ├── locale.ts
+│   └── request.ts
+├── lib/                  # Core business logic
+│   ├── portfolio-data.ts # Professional data
+│   ├── chat-responses.ts # Bot responses & logic
+│   └── utils.ts         # Utility functions
+├── types/                # TypeScript definitions
+├── utils/                # Helper functions
+└── messages/             # Translation files
+    ├── en.json          # English translations
+    └── th.json          # Thai translations
 ```
 
-### Custom Hooks
-
-- **`useChatMessages`** - Message state management
-- **`useChatScroll`** - Scroll behavior and position tracking
-- **`useChatState`** - General chat UI state
-- **`useChatInitialization`** - Welcome message and language setup
-- **`useChatActions`** - Message sending and suggestion handling
-
-### Component Architecture
+### Key Components
 
 ```typescript
-<ChatInterface>
-  <ChatHeader />
-  <ScrollArea>
-    <ChatMessage />
-    <TypingIndicator />
+<PortfolioChat>           // Main chat interface
+  <ChatHeader>            // Header with avatar, title, controls
+    <LocaleSwitcher />    // Language switching
+    <ThemeToggle />       // Dark/light mode
+  </ChatHeader>
+  
+  <ScrollArea>            // Messages container with smart scroll
+    <ChatMessage />       // Individual messages with markdown
+    <TypingIndicator />   // Bot thinking animation
   </ScrollArea>
-  <ChatSuggestions />
-  <ChatInput />
-</ChatInterface>
+  
+  <ScrollToBottomButton /> // Appears when scrolled up
+  <ChatSuggestions />     // Question suggestions
+  <ChatInput />           // Message input field
+</PortfolioChat>
 ```
 
 ## 🛠️ Tech Stack
 
 ### Core Framework
 - **[Next.js 15](https://nextjs.org/)** - React framework with App Router
-- **[React 19](https://react.dev/)** - UI library with latest features
-- **[TypeScript](https://www.typescriptlang.org/)** - Type-safe development
+- **[React 19](https://react.dev/)** - Latest React with Server Components
+- **[TypeScript 5](https://www.typescriptlang.org/)** - Type-safe development
 
 ### Styling & UI
-- **[Tailwind CSS 4](https://tailwindcss.com/)** - Utility-first CSS framework
+- **[Tailwind CSS v4](https://tailwindcss.com/)** - Utility-first CSS with variables
 - **[shadcn/ui](https://ui.shadcn.com/)** - High-quality component library
+- **[Radix UI](https://www.radix-ui.com/)** - Accessible primitives
 - **[Lucide React](https://lucide.dev/)** - Beautiful icon library
 - **[next-themes](https://github.com/pacocoursey/next-themes)** - Theme management
 
 ### Internationalization
 - **[next-intl](https://next-intl-docs.vercel.app/)** - Professional i18n solution
-- **Server-side locale management** - Persistent language preferences
+- **Server-side locale management** - Cookie-based persistence
+- **Type-safe translations** - Full TypeScript support
 
-### Development Tools
-- **[pnpm](https://pnpm.io/)** - Fast, disk space efficient package manager
-- **[ESLint](https://eslint.org/)** - Code linting and formatting
-- **TypeScript strict mode** - Enhanced type checking
+### Development Experience
+- **[Turbopack](https://turbo.build/pack)** - Fast development builds
+- **[ESLint](https://eslint.org/)** - Code linting and quality
+- **pnpm** - Fast, efficient package manager
 
 ## 📱 Features Deep Dive
 
-### Chat Interface
-The portfolio simulates an AI chat experience where visitors can learn about Raksit's professional background through interactive conversations.
+### AI Chat Experience
+The portfolio simulates an intelligent AI assistant ("Tantolio AI") that provides structured information about Raksit's professional background.
 
-**Key Capabilities:**
-- Portfolio-focused responses (not a real AI)
-- Natural conversation timing
-- Message history preservation during language changes
-- Auto-scroll with user control
-- Stop generation functionality
+**Chat Capabilities:**
+- **Personal Introduction**: Developer philosophy and personality
+- **Detailed Work Experience**: Company information with clickable links
+- **Technical Skills**: Categorized expertise and technologies
+- **Contact Information**: Professional contact details
+- **Smart Responses**: Context-aware answers to portfolio questions
 
-### Bilingual Support
-Professional internationalization supporting English and Thai:
+### Advanced UX Features
+
+#### Smart Scrolling System
+- **Auto-scroll Intelligence**: Only scrolls when user is near bottom (100px threshold)
+- **Reading Preservation**: Doesn't interrupt when user is reading content
+- **Scroll to Bottom Button**: Appears when scrolled away, smooth return to latest
+- **Scroll Position Detection**: Real-time monitoring with performance optimization
+
+#### Rich Content Rendering
+- **Markdown Support**: Custom renderer for bold text, links, and formatting
+- **Clickable Company Links**: Direct links to Bitkub and ProGaming websites
+- **No Duplication**: Fixed overlapping regex issues for clean rendering
+- **Company Logos**: Visual assets for professional presentation
+
+### Internationalization Excellence
+Professional bilingual support with:
 
 ```typescript
-// Example usage
+// Translation usage
 const t = useTranslations();
-const locale = useLocale() as 'en' | 'th';
-
-return <h1>{t('ui.title')}</h1>;
+const response = t('chat.whoIsRaksit', {
+  name: 'Raksit Nongbua',
+  nickname: 'Tan',
+  title: 'Software Development Team Lead',
+  company: 'Bitkub',
+  location: 'Thailand'
+});
 ```
 
-### Responsive Design
-Mobile-first approach with breakpoint-specific optimizations:
+**Translation Features:**
+- **Complete Coverage**: All UI elements and content
+- **Parameter Support**: Dynamic content injection
+- **Fallback System**: Graceful degradation with English defaults
+- **Professional Quality**: Native-level translations
 
-- **Mobile**: Single column layout, touch-optimized
-- **Tablet**: Improved spacing and typography
-- **Desktop**: Full feature set with optimal layout
+## 🎯 Portfolio Content
 
-## 🎯 Content Focus
+The portfolio showcases Raksit Nongbua's expertise across:
 
-The portfolio showcases Raksit Nongbua's expertise in:
+### Professional Experience
+- **Software Development Team Lead** at Bitkub (2024-Present)
+- **Senior Frontend Developer** at Bitkub (2022-2024)
+- **Junior Frontend Developer** at Bitkub (2021-2022)
+- **Web Developer & Game Developer** at ProGaming (2016-2021)
 
-- **Software Development Team Leadership** at Bitkub
-- **Frontend Architecture** with React, Next.js, TypeScript
-- **Authentication Systems** - OAuth 2.0, bitkub-auth, session management
-- **Design Systems** - Design tokens, component libraries
-- **Full-stack Development** - Node.js, databases, cloud services
-- **Game Development** - Unity, C#, web games
+### Technical Specializations
+- **Authentication Systems**: OAuth 2.0, bitkub-auth, session management
+- **Frontend Architecture**: React, Next.js, TypeScript, design systems
+- **Team Leadership**: Code review, mentoring, technical architecture
+- **Design Systems**: Design tokens pioneer, component libraries
+- **Full-stack Development**: Node.js, databases, cloud services
+- **Game Development**: Unity, C#, cross-platform development
+
+### Personal Philosophy
+> *"Coding is as simple as writing!"* - Focus on clean, readable code that's easy to understand and maintain.
 
 ## 🔧 Development
 
-### Available Scripts
-
-```bash
-# Development
-pnpm dev          # Start development server
-pnpm build        # Build for production
-pnpm start        # Start production server
-pnpm lint         # Run ESLint
-
-# Type checking
-pnpm type-check   # Run TypeScript compiler
-```
-
 ### Environment Setup
 
-Create a `.env.local` file for local development:
+```bash
+# Optional: Create environment file
+touch .env.local
 
-```env
-# Add any environment variables here
+# Example contents
 NEXT_PUBLIC_SITE_URL=http://localhost:3000
 ```
 
-### Adding New Languages
-
-1. Add locale to `src/i18n/config.ts`
-2. Create translation file in `messages/[locale].json`
-3. Update chat responses in `src/lib/chat-responses.ts`
-
 ### Customizing Content
 
-Portfolio content is centralized in:
-- `src/lib/portfolio-data.ts` - Professional data
-- `src/lib/chat-responses.ts` - Chat responses and logic
-- `messages/*.json` - UI translations
+**Portfolio Data**: `src/lib/portfolio-data.ts`
+```typescript
+export const portfolioData = {
+  personal: { /* Personal information */ },
+  skills: { /* Technical skills by category */ },
+  projects: [ /* Project showcase */ ],
+  experience: [ /* Work experience */ ]
+};
+```
+
+**Chat Responses**: `src/lib/chat-responses.ts`
+```typescript
+// Add new response types
+if (aliasedMessage.includes('your-new-topic')) {
+  responseKey = 'newTopic';
+}
+```
+
+**Translations**: `messages/en.json` & `messages/th.json`
+```json
+{
+  "chat": {
+    "newTopic": "Your new response content"
+  }
+}
+```
+
+### Adding Features
+
+1. **New Chat Topics**: Add to chat responses and translations
+2. **UI Components**: Use shadcn/ui or create custom components
+3. **Styling**: Follow Tailwind CSS utility patterns
+4. **State Management**: Use React hooks and context when needed
 
 ## 📈 Performance
 
-- **Bundle Size**: Optimized ~51kB main bundle
-- **Lighthouse Scores**: 100/100 for Performance, Accessibility, Best Practices
-- **Core Web Vitals**: Excellent scores across all metrics
-- **Code Splitting**: Automatic route-based splitting
+- **Bundle Size**: ~48kB optimized main bundle
+- **Build Time**: Fast builds with Turbopack
+- **Runtime Performance**: Optimized with React 19 features
+- **Accessibility**: Full screen reader and keyboard support
+- **Mobile Performance**: Optimized for mobile devices
+
+### Build Output
+```
+Route (app)                                 Size  First Load JS
+┌ ƒ /                                    48.2 kB         166 kB
+└ ƒ /_not-found                            136 B         102 kB
+```
 
 ## 🚀 Deployment
 
 ### Vercel (Recommended)
 
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/yourusername/tantolio-v2)
+
 ```bash
 # Deploy to Vercel
 npx vercel
 
-# Or connect your GitHub repository to Vercel dashboard
+# Or connect GitHub repository in Vercel dashboard
 ```
 
 ### Other Platforms
 
-The application works on any platform supporting Next.js:
-- **Netlify**
-- **AWS Amplify** 
-- **Railway**
-- **DigitalOcean App Platform**
+The application works on any Next.js-compatible platform:
+- **Netlify** - Full Next.js support
+- **AWS Amplify** - Server-side rendering support
+- **Railway** - Container deployment
+- **DigitalOcean App Platform** - Modern deployment
 
 ### Build Configuration
 
@@ -240,7 +313,11 @@ import createNextIntlPlugin from 'next-intl/plugin';
 const withNextIntl = createNextIntlPlugin();
 
 export default withNextIntl({
-  // Your Next.js config
+  experimental: {
+    turbo: {
+      // Turbopack configuration
+    }
+  }
 });
 ```
 
@@ -254,17 +331,18 @@ export default withNextIntl({
 
 ### Development Guidelines
 
-- Follow TypeScript strict mode
-- Use custom hooks for complex logic
-- Maintain component single responsibility
-- Add proper TypeScript interfaces
-- Test across different screen sizes
-- Ensure accessibility compliance
+- **Code Style**: Follow "coding is as simple as writing" philosophy
+- **TypeScript**: Use strict mode and proper typing
+- **Components**: Keep single responsibility principle
+- **Accessibility**: Ensure WCAG compliance
+- **Testing**: Test across different devices and languages
+- **Performance**: Optimize for Core Web Vitals
 
 ## 📚 Documentation
 
-- **[REFACTORING.md](./REFACTORING.md)** - Detailed refactoring guide and architecture decisions
-- **[CLAUDE.md](./CLAUDE.md)** - Development context and AI assistance notes
+- **[CLAUDE.md](./CLAUDE.md)** - Development context and project guidance
+- **Component Documentation** - Inline JSDoc comments
+- **Type Definitions** - Comprehensive TypeScript interfaces
 
 ## 📄 License
 
@@ -273,14 +351,29 @@ This project is open source and available under the [MIT License](LICENSE).
 ## 👨‍💻 About
 
 **Raksit Nongbua (Tan)** - Software Development Team Lead at Bitkub  
-Specializing in frontend architecture, authentication systems, and design systems.
+*"I am a developer. My coding guideline is 'coding is as simple as writing!' for easy reading and fixing."*
 
+### Professional Background
+- **Current Role**: Team Lead at Thailand's leading cryptocurrency exchange
+- **Expertise**: Authentication systems, frontend architecture, design systems
+- **Philosophy**: Clean, maintainable code that reads like good writing
+- **Experience**: Both game development and web development background
+
+### Interests
+- 🎮 Playing games
+- 🎬 Watching movies  
+- 🎵 Listening to music
+- 💻 Learning new technologies
+- 👥 Working as part of a team
+
+### Contact
+- **Email**: tan.raksit@gmail.com
+- **Location**: Thailand 🇹🇭
+- **GitHub**: [@yourusername](https://github.com/yourusername)
 - **LinkedIn**: [Raksit Nongbua](https://linkedin.com/in/raksit-nongbua)
-- **GitHub**: [@raksitnongbua](https://github.com/raksitnongbua)
-- **Website**: [tantolio portfolio](https://tantolio.vercel.app)
 
 ---
 
 Built with ❤️ using modern web technologies and clean architecture principles.
 
-*🤖 Enhanced with [Claude Code](https://claude.ai/code) for optimal development experience.*
+*🤖 Enhanced development experience with [Claude Code](https://claude.ai/code)*

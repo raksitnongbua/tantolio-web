@@ -21,6 +21,11 @@ export class PortfolioChatBot {
           .replace('{location}', portfolioData.personal.location);
       }
       
+      if (key === 'workExperience') {
+        // Return the rich markdown content from translations for detailed work experience
+        return translations.chat?.workExperience || translations.chat?.default || '';
+      }
+      
       if (key === 'experience') {
         // For experience, we'll still use the hardcoded data structure but with proper formatting
         const experienceContent = `Here's Tan's professional experience and educational background:
@@ -116,7 +121,9 @@ ${edu.school} (${edu.period})`
     "his work": "tell me about his experience",
     // New standardized suggestion aliases
     "his work experience and education": "tell me about his experience",
-    "work experience and education": "tell me about his experience", 
+    "work experience and education": "tell me about his experience",
+    "his detailed work experience": "tell me about his detailed work experience",
+    "detailed work experience": "tell me about his detailed work experience",
     "his skill and tech stack knowledge": "what are his skills",
     "skill and tech stack knowledge": "what are his skills",
     "skills": "what are his skills",
@@ -126,6 +133,7 @@ ${edu.school} (${edu.period})`
     "รักษิต หนองบัว คือใคร": "who is raksit nongbua",
     "รักษิต หนองบัว คือใคร?": "who is raksit nongbua",
     "ประสบการณ์ทำงานและการศึกษา": "tell me about his experience",
+    "ประสบการณ์ทำงานโดยละเอียด": "tell me about his detailed work experience",
     "ทักษะและความรู้ด้านเทคโนโลยี": "what are his skills",
     "ช่องทางติดต่อ": "how can i contact him"
   };
@@ -147,6 +155,8 @@ ${edu.school} (${edu.period})`
       } else if (aliasedMessage.includes('what are his skills') || aliasedMessage.includes('ทักษะ')) {
         responseKey = 'skills';
         isSkillsResponse = true;
+      } else if (aliasedMessage.includes('tell me about his detailed work experience') || aliasedMessage.includes('ประสบการณ์ทำงานโดยละเอียด')) {
+        responseKey = 'workExperience';
       } else if (aliasedMessage.includes('tell me about his experience') || aliasedMessage.includes('ประสบการณ์')) {
         responseKey = 'experience';
       } else if (aliasedMessage.includes('how can i contact') || aliasedMessage.includes('ติดต่อ')) {
