@@ -12,6 +12,10 @@ This is a personal portfolio website built with Next.js 15 and React 19. The pro
 - `npm run build` - Build the application for production
 - `npm run start` - Start production server
 - `npm run lint` - Run ESLint for code quality
+- `npm run test` - Run test suite with Vitest
+- `npm run test:watch` - Run tests in watch mode
+- `npm run test:ui` - Run tests with UI interface
+- `npm run test:coverage` - Generate test coverage report
 
 ## Recent Major Updates
 
@@ -43,6 +47,7 @@ This is a personal portfolio website built with Next.js 15 and React 19. The pro
 - **Icons**: Lucide React
 - **Utilities**: class-variance-authority, clsx, tailwind-merge
 - **TypeScript**: Strict mode enabled
+- **Testing**: Vitest with React Testing Library and jsdom
 
 ### Project Structure
 - `src/app/` - Next.js App Router pages and layouts
@@ -88,3 +93,43 @@ When adding new components, follow the shadcn/ui pattern and use the configured 
 - **UX Improvements**: Reading preservation, no interruption during content consumption
 - Enhanced interactive star background with mouse tracking and particle effects
 - Fixed duplicate content rendering with non-overlapping regex patterns
+
+## Testing Framework
+
+### Test Setup
+- **Vitest**: Fast test runner with TypeScript support and ESM compatibility
+- **React Testing Library**: Component testing utilities for user-centric tests
+- **jsdom**: Browser environment simulation for DOM testing
+- **@testing-library/jest-dom**: Additional DOM matchers for better assertions
+
+### Test Structure
+```
+src/
+├── lib/__tests__/           # Business logic tests
+│   ├── utils.test.ts        # Utility function tests
+│   ├── portfolio-data.test.ts # Data structure validation
+│   └── chat-responses.test.ts # Chat bot logic tests
+├── utils/__tests__/         # Utility function tests
+│   └── message-utils.test.ts # Message processing logic
+├── hooks/__tests__/         # Custom hook tests
+│   └── use-chat-state.test.ts # Chat state management
+└── components/__tests__/    # Component and integration tests
+    ├── markdown-renderer.test.tsx # Markdown processing
+    ├── typing-indicator.test.tsx  # UI components
+    └── portfolio-chat.integration.test.tsx # End-to-end flows
+```
+
+### Test Coverage Areas
+- **Unit Tests**: 113 tests covering all utility functions and business logic
+- **Component Tests**: React components with user interactions and edge cases
+- **Integration Tests**: Chat conversation flows and user experience scenarios
+- **Data Validation**: Portfolio data structure integrity and content quality
+- **Error Handling**: Graceful degradation and fallback behaviors
+
+### Testing Best Practices
+- Co-locate tests with source files using `__tests__` directories
+- Test user behavior, not implementation details
+- Use descriptive test names that explain the expected behavior
+- Mock external dependencies (next-intl, next-themes, etc.)
+- Test edge cases and error conditions
+- Maintain test reliability with proper setup/teardown

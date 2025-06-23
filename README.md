@@ -1,6 +1,8 @@
-# 🤖 tantolio - Interactive AI Portfolio
+# 🤖 tantolio-web - Interactive AI Portfolio
 
 A modern, interactive portfolio website featuring an AI-themed chat interface to showcase Raksit Nongbua's professional experience and skills. The name "tantolio" combines "Tan" (nickname) + "portfolio" to create an engaging, personalized portfolio experience.
+
+🌐 **Live Demo**: [https://tantolio-web.vercel.app/](https://tantolio-web.vercel.app/)
 
 ![Next.js](https://img.shields.io/badge/Next.js-15.3.4-black)
 ![React](https://img.shields.io/badge/React-19.0.0-blue)
@@ -11,6 +13,7 @@ A modern, interactive portfolio website featuring an AI-themed chat interface to
 ## ✨ Features
 
 ### 🤖 Interactive AI Chat Experience
+
 - **"Tantolio AI" Assistant**: Portfolio-focused chat bot with personality
 - **Smart Auto-Scroll**: Only scrolls when user is near bottom (improved UX)
 - **Scroll to Bottom Button**: Easy navigation back to latest messages
@@ -19,12 +22,14 @@ A modern, interactive portfolio website featuring an AI-themed chat interface to
 - **Smart Suggestions**: Context-aware question prompts
 
 ### 🌍 Comprehensive Internationalization
+
 - **Bilingual Support**: Complete English and Thai translations
 - **Locale Switcher**: Easy language switching with flag icons
 - **Server-side Management**: Persistent preferences with cookies
 - **Professional Localization**: Industry-standard i18n implementation
 
 ### 🎨 Modern UI/UX Excellence
+
 - **Dual Theme System**: Dark/light mode with smooth transitions
 - **Interactive Backgrounds**: Mouse-tracking star particles
 - **Responsive Design**: Mobile-first approach optimized for all devices
@@ -32,6 +37,7 @@ A modern, interactive portfolio website featuring an AI-themed chat interface to
 - **Smooth Animations**: Enhanced scrolling and interaction feedback
 
 ### 🏗️ Technical Architecture
+
 - **Modern Stack**: Next.js 15 + React 19 + TypeScript 5
 - **Component-Driven**: shadcn/ui with custom components
 - **Performance Optimized**: Server Components and smart state management
@@ -41,6 +47,7 @@ A modern, interactive portfolio website featuring an AI-themed chat interface to
 ## 🚀 Quick Start
 
 ### Prerequisites
+
 - Node.js 18+ (LTS recommended)
 - pnpm (recommended) or npm
 
@@ -48,8 +55,8 @@ A modern, interactive portfolio website featuring an AI-themed chat interface to
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/tantolio-v2.git
-cd tantolio-v2
+git clone https://github.com/raksitnongbua/tantolio-web.git
+cd tantolio-web
 
 # Install dependencies
 pnpm install
@@ -68,6 +75,12 @@ pnpm dev          # Start dev server with Turbopack
 pnpm build        # Build for production
 pnpm start        # Start production server
 pnpm lint         # Run ESLint checks
+
+# Testing
+pnpm test         # Run test suite
+pnpm test:watch   # Run tests in watch mode
+pnpm test:ui      # Run tests with UI interface
+pnpm test:coverage # Run tests with coverage report
 ```
 
 ## 🏛️ Architecture
@@ -111,31 +124,37 @@ src/
 ### Key Components
 
 ```typescript
-<PortfolioChat>           // Main chat interface
-  <ChatHeader>            // Header with avatar, title, controls
-    <LocaleSwitcher />    // Language switching
-    <ThemeToggle />       // Dark/light mode
+<PortfolioChat>
+  {' '}
+  // Main chat interface
+  <ChatHeader>
+    {' '}
+    // Header with avatar, title, controls
+    <LocaleSwitcher /> // Language switching
+    <ThemeToggle /> // Dark/light mode
   </ChatHeader>
-  
-  <ScrollArea>            // Messages container with smart scroll
-    <ChatMessage />       // Individual messages with markdown
-    <TypingIndicator />   // Bot thinking animation
+  <ScrollArea>
+    {' '}
+    // Messages container with smart scroll
+    <ChatMessage /> // Individual messages with markdown
+    <TypingIndicator /> // Bot thinking animation
   </ScrollArea>
-  
   <ScrollToBottomButton /> // Appears when scrolled up
-  <ChatSuggestions />     // Question suggestions
-  <ChatInput />           // Message input field
+  <ChatSuggestions /> // Question suggestions
+  <ChatInput /> // Message input field
 </PortfolioChat>
 ```
 
 ## 🛠️ Tech Stack
 
 ### Core Framework
+
 - **[Next.js 15](https://nextjs.org/)** - React framework with App Router
 - **[React 19](https://react.dev/)** - Latest React with Server Components
 - **[TypeScript 5](https://www.typescriptlang.org/)** - Type-safe development
 
 ### Styling & UI
+
 - **[Tailwind CSS v4](https://tailwindcss.com/)** - Utility-first CSS with variables
 - **[shadcn/ui](https://ui.shadcn.com/)** - High-quality component library
 - **[Radix UI](https://www.radix-ui.com/)** - Accessible primitives
@@ -143,21 +162,26 @@ src/
 - **[next-themes](https://github.com/pacocoursey/next-themes)** - Theme management
 
 ### Internationalization
+
 - **[next-intl](https://next-intl-docs.vercel.app/)** - Professional i18n solution
 - **Server-side locale management** - Cookie-based persistence
 - **Type-safe translations** - Full TypeScript support
 
 ### Development Experience
+
 - **[Turbopack](https://turbo.build/pack)** - Fast development builds
 - **[ESLint](https://eslint.org/)** - Code linting and quality
+- **[Vitest](https://vitest.dev/)** - Fast unit testing with React Testing Library
 - **pnpm** - Fast, efficient package manager
 
 ## 📱 Features Deep Dive
 
 ### AI Chat Experience
+
 The portfolio simulates an intelligent AI assistant ("Tantolio AI") that provides structured information about Raksit's professional background.
 
 **Chat Capabilities:**
+
 - **Personal Introduction**: Developer philosophy and personality
 - **Detailed Work Experience**: Company information with clickable links
 - **Technical Skills**: Categorized expertise and technologies
@@ -167,18 +191,21 @@ The portfolio simulates an intelligent AI assistant ("Tantolio AI") that provide
 ### Advanced UX Features
 
 #### Smart Scrolling System
+
 - **Auto-scroll Intelligence**: Only scrolls when user is near bottom (100px threshold)
 - **Reading Preservation**: Doesn't interrupt when user is reading content
 - **Scroll to Bottom Button**: Appears when scrolled away, smooth return to latest
 - **Scroll Position Detection**: Real-time monitoring with performance optimization
 
 #### Rich Content Rendering
+
 - **Markdown Support**: Custom renderer for bold text, links, and formatting
 - **Clickable Company Links**: Direct links to Bitkub and ProGaming websites
 - **No Duplication**: Fixed overlapping regex issues for clean rendering
 - **Company Logos**: Visual assets for professional presentation
 
 ### Internationalization Excellence
+
 Professional bilingual support with:
 
 ```typescript
@@ -189,11 +216,12 @@ const response = t('chat.whoIsRaksit', {
   nickname: 'Tan',
   title: 'Software Development Team Lead',
   company: 'Bitkub',
-  location: 'Thailand'
+  location: 'Thailand',
 });
 ```
 
 **Translation Features:**
+
 - **Complete Coverage**: All UI elements and content
 - **Parameter Support**: Dynamic content injection
 - **Fallback System**: Graceful degradation with English defaults
@@ -204,12 +232,14 @@ const response = t('chat.whoIsRaksit', {
 The portfolio showcases Raksit Nongbua's expertise across:
 
 ### Professional Experience
+
 - **Software Development Team Lead** at Bitkub (2024-Present)
 - **Senior Frontend Developer** at Bitkub (2022-2024)
 - **Junior Frontend Developer** at Bitkub (2021-2022)
 - **Web Developer & Game Developer** at ProGaming (2016-2021)
 
 ### Technical Specializations
+
 - **Authentication Systems**: OAuth 2.0, bitkub-auth, session management
 - **Frontend Architecture**: React, Next.js, TypeScript, design systems
 - **Team Leadership**: Code review, mentoring, technical architecture
@@ -218,7 +248,83 @@ The portfolio showcases Raksit Nongbua's expertise across:
 - **Game Development**: Unity, C#, cross-platform development
 
 ### Personal Philosophy
-> *"Coding is as simple as writing!"* - Focus on clean, readable code that's easy to understand and maintain.
+
+> _"Coding is as simple as writing!"_ - Focus on clean, readable code that's easy to understand and maintain.
+
+## 🧪 Testing
+
+### Test Architecture
+
+The project uses **Vitest** with **React Testing Library** for comprehensive testing coverage:
+
+```
+src/
+├── **/__tests__/        # Test files alongside source code
+├── lib/__tests__/       # Unit tests for business logic
+├── utils/__tests__/     # Unit tests for utility functions
+├── hooks/__tests__/     # Custom hook tests
+└── components/__tests__/ # Component and integration tests
+```
+
+### Testing Commands
+
+```bash
+# Run all tests
+pnpm test
+
+# Run tests in watch mode (recommended for development)
+pnpm test:watch
+
+# Run tests with UI interface
+pnpm test:ui
+
+# Generate coverage report
+pnpm test:coverage
+```
+
+### Test Coverage
+
+- **Unit Tests**: Business logic, utilities, and data structures
+- **Component Tests**: React components with user interactions
+- **Integration Tests**: Chat functionality and user flows
+- **Hook Tests**: Custom React hooks with state management
+
+**Current Coverage**: 113 tests across all core functionality
+
+### Writing Tests
+
+Example test structure:
+
+```typescript
+// Component test
+import { render, screen, fireEvent } from '@testing-library/react';
+import { MyComponent } from '../my-component';
+
+describe('MyComponent', () => {
+  it('should render correctly', () => {
+    render(<MyComponent />);
+    expect(screen.getByRole('button')).toBeInTheDocument();
+  });
+});
+
+// Utility test
+import { myUtilFunction } from '../utils';
+
+describe('myUtilFunction', () => {
+  it('should return expected result', () => {
+    expect(myUtilFunction('input')).toBe('expected');
+  });
+});
+```
+
+### Test Configuration
+
+Tests are configured with:
+
+- **Vitest** - Fast test runner with TypeScript support
+- **jsdom** - Browser environment simulation
+- **React Testing Library** - Component testing utilities
+- **@testing-library/jest-dom** - Additional DOM matchers
 
 ## 🔧 Development
 
@@ -235,16 +341,26 @@ NEXT_PUBLIC_SITE_URL=http://localhost:3000
 ### Customizing Content
 
 **Portfolio Data**: `src/lib/portfolio-data.ts`
+
 ```typescript
 export const portfolioData = {
-  personal: { /* Personal information */ },
-  skills: { /* Technical skills by category */ },
-  projects: [ /* Project showcase */ ],
-  experience: [ /* Work experience */ ]
+  personal: {
+    /* Personal information */
+  },
+  skills: {
+    /* Technical skills by category */
+  },
+  projects: [
+    /* Project showcase */
+  ],
+  experience: [
+    /* Work experience */
+  ],
 };
 ```
 
 **Chat Responses**: `src/lib/chat-responses.ts`
+
 ```typescript
 // Add new response types
 if (aliasedMessage.includes('your-new-topic')) {
@@ -253,6 +369,7 @@ if (aliasedMessage.includes('your-new-topic')) {
 ```
 
 **Translations**: `messages/en.json` & `messages/th.json`
+
 ```json
 {
   "chat": {
@@ -277,6 +394,7 @@ if (aliasedMessage.includes('your-new-topic')) {
 - **Mobile Performance**: Optimized for mobile devices
 
 ### Build Output
+
 ```
 Route (app)                                 Size  First Load JS
 ┌ ƒ /                                    48.2 kB         166 kB
@@ -287,7 +405,7 @@ Route (app)                                 Size  First Load JS
 
 ### Vercel (Recommended)
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/yourusername/tantolio-v2)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/raksitnongbua/tantolio-web)
 
 ```bash
 # Deploy to Vercel
@@ -299,6 +417,7 @@ npx vercel
 ### Other Platforms
 
 The application works on any Next.js-compatible platform:
+
 - **Netlify** - Full Next.js support
 - **AWS Amplify** - Server-side rendering support
 - **Railway** - Container deployment
@@ -316,8 +435,8 @@ export default withNextIntl({
   experimental: {
     turbo: {
       // Turbopack configuration
-    }
-  }
+    },
+  },
 });
 ```
 
@@ -351,29 +470,31 @@ This project is open source and available under the [MIT License](LICENSE).
 ## 👨‍💻 About
 
 **Raksit Nongbua (Tan)** - Software Development Team Lead at Bitkub  
-*"I am a developer. My coding guideline is 'coding is as simple as writing!' for easy reading and fixing."*
+_"I am a developer. My coding guideline is 'coding is as simple as writing!' for easy reading and fixing."_
 
 ### Professional Background
+
 - **Current Role**: Team Lead at Thailand's leading cryptocurrency exchange
 - **Expertise**: Authentication systems, frontend architecture, design systems
 - **Philosophy**: Clean, maintainable code that reads like good writing
 - **Experience**: Both game development and web development background
 
 ### Interests
+
 - 🎮 Playing games
-- 🎬 Watching movies  
+- 🎬 Watching movies
 - 🎵 Listening to music
 - 💻 Learning new technologies
 - 👥 Working as part of a team
 
 ### Contact
+
 - **Email**: tan.raksit@gmail.com
 - **Location**: Thailand 🇹🇭
-- **GitHub**: [@yourusername](https://github.com/yourusername)
-- **LinkedIn**: [Raksit Nongbua](https://linkedin.com/in/raksit-nongbua)
+- **GitHub**: [@raksitnongbua](https://github.com/raksitnongbua)
 
 ---
 
 Built with ❤️ using modern web technologies and clean architecture principles.
 
-*🤖 Enhanced development experience with [Claude Code](https://claude.ai/code)*
+_🤖 Enhanced development experience with [Claude Code](https://claude.ai/code)_
